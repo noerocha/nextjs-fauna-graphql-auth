@@ -1,0 +1,7 @@
+CreateIndex({
+  name: "user_by_email",
+  unique: true,
+  serialized: true,
+  source: Collection("User"),
+  terms: [{ field: ["data", "email"], transform: "casefold" }]
+})
